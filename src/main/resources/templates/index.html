@@ -1,10 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>数据迁移工具</title>
 </head>
 <body>
-$END$
+<h1>将 MySQL/Oracle 数据迁移到 ClickHouse</h1>
+<form action="/migrate" method="post">
+    <h2>源数据库</h2>
+    <label for="sourceDbType">数据库类型:</label>
+    <select id="sourceDbType" name="sourceDbType">
+        <option value="oracle">Oracle</option>
+        <option value="mysql">MySQL</option>
+    </select><br>
+    <label for="sourceHost">主机:</label>
+    <input type="text" id="sourceHost" name="sourceHost" required><br>
+    <label for="sourcePort">端口:</label>
+    <input type="text" id="sourcePort" name="sourcePort" required><br>
+    <label for="sourceDatabase">数据库名:</label>
+    <input type="text" id="sourceDatabase" name="sourceDatabase" required><br>
+    <label for="sourceUser">用户名:</label>
+    <input type="text" id="sourceUser" name="sourceUser" required><br>
+    <label for="sourcePassword">密码:</label>
+    <input type="password" id="sourcePassword" name="sourcePassword" required><br>
+    <label for="sourceTable">表名:</label>
+    <input type="text" id="sourceTable" name="sourceTable" required><br>
+
+    <h2>ClickHouse</h2>
+    <label for="clickHouseHost">主机:</label>
+    <input type="text" id="clickHouseHost" name="clickHouseHost" required><br>
+    <label for="clickHousePort">端口:</label>
+    <input type="text" id="clickHousePort" name="clickHousePort" required><br>
+    <label for="clickHouseDatabase">数据库名:</label>
+    <input type="text" id="clickHouseDatabase" name="clickHouseDatabase" required><br>
+    <label for="clickHouseUser">用户名:</label>
+    <input type="text" id="clickHouseUser" name="clickHouseUser" required><br>
+    <label for="clickHousePassword">密码:</label>
+    <input type="password" id="clickHousePassword" name="clickHousePassword" required><br>
+    <label for="clickHouseTable">表名:</label>
+    <input type="text" id="clickHouseTable" name="clickHouseTable" required>
+    <br><br>
+    <input type="submit" value="迁移数据">
+</form>
 </body>
 </html>
